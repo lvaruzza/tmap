@@ -1,32 +1,34 @@
 /* Copyright (C) 2014 Ion Torrent Systems, Inc. All Rights Reserved */
-#ifndef REALIGN_WRAPPER_IMP_H
-#define REALIGN_WRAPPER_IMP_H
+
+#ifndef REALIGN_WRAPPER_CONTEXT_IMP_H
+#define REALIGN_WRAPPER_CONTEXT_IMP_H
 
 #include "realign_proxy.h"
-#include "Realign.h"
+#include "contalign.h"
 
-class RealignImp : public RealignProxy, protected Realigner
+class ContAlignImp : public RealignProxy, protected ContAlign
 {
-    CLIPTYPE cliptype_;
-
     // buffers for reference and inverse query sequences
     char* qry_buf_;
     unsigned qry_buf_len_;
     char* ref_buf_;
     unsigned ref_buf_len_;
 
-    // clip zones 
-    unsigned clip_beg_;
-    unsigned clip_end_;
+    bool invalid_cigar_in_input_;
+
+    unsigned extra_bandwidth_;
+    static const unsigned MAX_BATCH_NO = 100;
+    BATCH batches_ [MAX_BATCH_NO];
+    static const unsigned MAX_CIGAR_SZ = 200;
+    unsigned new_cigar_ [MAX_CIGAR_SZ];
 
     unsigned len_roundup (unsigned len);
 
 protected:
-    RealignImp ();
-    RealignImp (unsigned reserve_size, unsigned clipping_size);
+    ContAlignImp ();
 
 public:
-    ~RealignImp ();
+    ~ContAlignImp ();
     // general control
     void set_verbose (bool verbose);
     void set_debug (bool debug);
@@ -37,7 +39,7 @@ public:
     void set_bandwidth (int bandwidth);
     void set_clipping (CLIPTYPE clipping);
 
-    // alignment setup and run
+    // alignment setup and run    
     bool compute_alignment (const char* q_seq,
                             unsigned q_len,
                             const char* r_seq,
@@ -58,9 +60,7 @@ public:
     char* qry_buf (unsigned len);
     char* ref_buf (unsigned len);
 
-    friend RealignProxy* createRealigner (unsigned reserve_size, unsigned clipping_size);
-    friend RealignProxy* createRealigner ();
-    
+    friend RealignProxy* createContextAligner ();
 };
 
-#endif // REALIGN_WRAPPER_IMP_H
+#endif // REALIGN_WRAPPER_CONTEXT_IMP_H
