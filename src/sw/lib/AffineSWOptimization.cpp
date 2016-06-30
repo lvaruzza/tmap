@@ -7,7 +7,7 @@
 #include "Solution3.h"
 #include "Solution4.h"
 //#include "Solution5.h"
-#include "Solution6.h"
+//#include "Solution6.h"
 //#include "Solution7.h"
 //#include "Solution8.h"
 #include "Solution9.h"
@@ -35,9 +35,9 @@ AffineSWOptimization::AffineSWOptimization(int type) {
 //      case 5:
 //       s = new Solution5();
 //        break;
-      case 6:
-        s = new Solution6();
-        break;
+//      case 6:
+//        s = new Solution6();
+//        break;
 //      case 7:
 //        s = new Solution7();
 //        break;
