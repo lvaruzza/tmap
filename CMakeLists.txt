@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 2.6.4)
 
 project(TMAP)
 
+set (ION_VERSION_MAJOR 5)
+set (ION_VERSION_MINOR 0)
+set (ION_VERSION_RELEASE 7)
 set (ION_TS_EXTERNAL .)
 
 set (GLOBAL_SOURCES              config.h
