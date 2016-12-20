@@ -3,6 +3,8 @@
 #define TMAP_MAP_OPT_H
 
 #include <sys/types.h>
+#include <sys/ipc.h>
+
 #include <getopt.h>
 #include "../../sw/tmap_vsw.h"
 #include "../../realign/realign_cliptype.h"

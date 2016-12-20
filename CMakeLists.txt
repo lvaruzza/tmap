@@ -1,6 +1,8 @@
 # Copyright (C) 2013 Ion Torrent Systems, Inc. All Rights Reserved
 cmake_minimum_required(VERSION 2.6.4)
 
+set (ION_TS_EXTERNAL .)
+
 project(TMAP)
 
 set (GLOBAL_SOURCES              config.h
@@ -53,7 +55,7 @@ set (GLOBAL_SOURCES              config.h
 				 src/sw/lib/Solution3.cpp src/sw/lib/Solution3.h 
 				 src/sw/lib/Solution4.cpp src/sw/lib/Solution4.h 
 				 #src/sw/lib/Solution5.cpp src/sw/lib/Solution5.h 
-				 src/sw/lib/Solution6.cpp src/sw/lib/Solution6.h 
+				 #src/sw/lib/Solution6.cpp src/sw/lib/Solution6.h 
 				 #src/sw/lib/Solution7.cpp src/sw/lib/Solution7.h 
 				 #src/sw/lib/Solution8.cpp src/sw/lib/Solution8.h 
 				 #src/sw/lib/Solution9.cpp src/sw/lib/Solution9.h 
