@@ -40,7 +40,9 @@ TMAP is a fast and accurate alignment software for short and long nucleotide seq
 ##  To Install
 
 1. Compile TMAP:
-  <pre lang="bash"><code>sh make.sh</code></pre>
+  <pre lang="bash"><code>sh autogen.sh && ./configure && make</code></pre>
+2. Install
+  <pre lang="bash"><code>make install</code></pre>
 
 ##  Optional Installs
 

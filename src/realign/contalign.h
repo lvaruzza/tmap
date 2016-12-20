@@ -1,9 +1,13 @@
 /* Copyright (C) 2014 Ion Torrent Systems, Inc. All Rights Reserved */
 
-#ifndef CONTALIGN_H
-#define CONTALIGN_H
+//////////////////////////////////////////////////////////////////////////////
+// Derived from QSimScan project, released under MIT license
+// (https://github.com/abadona/qsimscan)
+//////////////////////////////////////////////////////////////////////////////
 
-// This is modified code from SciDM's genomodules
+#ifndef __contalign_h__
+#define __contalign_h__
+
 
 #include <ostream>
 #include "align_common.h"
@@ -33,6 +37,7 @@ private:
     char* max_bp;
     char* last_bp;
     char* btrmx;
+    double float_error_bound;
     ALIGN_FVECT* ap;
     double gip, gep, mat, mis;
     bool to_first, to_last;
@@ -62,7 +67,7 @@ public:
 
     void init (int max_ylen, int max_xlen, int max_size, int gip, int gep, int mat, int mis);
 
-    void set_scoring (int gip, int gep, int mat, int mis);
+    void set_scoring (double gip, double gep, double mat, double mis);
 
     void set_log (std::ostream& log);
     void set_log (int posix_handle);
@@ -97,4 +102,4 @@ public:
 };
 
 
-#endif // CONTALIGN_H
+#endif // __contalign_h__

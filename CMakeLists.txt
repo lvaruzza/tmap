@@ -3,11 +3,6 @@ cmake_minimum_required(VERSION 2.6.4)
 
 project(TMAP)
 
-set (ION_VERSION_MAJOR 5)
-set (ION_VERSION_MINOR 0)
-set (ION_VERSION_RELEASE 7)
-set (ION_TS_EXTERNAL .)
-
 set (GLOBAL_SOURCES              config.h
 				 src/util/tmap_alloc.h src/util/tmap_alloc.c 
 				 src/util/tmap_definitions.h src/util/tmap_definitions.c 
@@ -58,7 +53,7 @@ set (GLOBAL_SOURCES              config.h
 				 src/sw/lib/Solution3.cpp src/sw/lib/Solution3.h 
 				 src/sw/lib/Solution4.cpp src/sw/lib/Solution4.h 
 				 #src/sw/lib/Solution5.cpp src/sw/lib/Solution5.h 
-				 #src/sw/lib/Solution6.cpp src/sw/lib/Solution6.h 
+				 src/sw/lib/Solution6.cpp src/sw/lib/Solution6.h 
 				 #src/sw/lib/Solution7.cpp src/sw/lib/Solution7.h 
 				 #src/sw/lib/Solution8.cpp src/sw/lib/Solution8.h 
 				 #src/sw/lib/Solution9.cpp src/sw/lib/Solution9.h 
